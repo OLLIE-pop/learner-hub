@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Never Ending Car</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #sketch-container {
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="sketch-container">
+        <h1>Never Ending Car</h1>
+    </div>
+
+    <script>
+        let x = 280;
+        let y = 190;
+        let X = 124;
+        let Y = 187;
+        let rectx = 102;
+        let rectX = 138;
+
+        function setup() {
+            createCanvas(400, 300);
+            noStroke();
+            fill(26, 255, 0);
+        }
+
+        function draw() {
+            background(87, 235, 255);
+            fill(255, 0, 0);
+            
+            // Both wheels of the car
+            ellipse(X, Y, 31, 34);
+            ellipse(x, y, 31, 34);
+
+            if (x > 375) {
+                x = 5;
+            }
+
+            if (X > 375) {
+                X = 5;
+            }
+
+            if (rectx > 375) {
+                rectx = 5;
+            }
+
+            if (rectX > 375) {
+                rectX = 5;
+            }
+
+            // Body and head of the car
+            rect(rectx, 150, 200, 25);
+            rect(rectX, 115, 131, 37);
+
+            x = x + 5;
+            X = X + 5;
+            rectx = rectx + 5;
+            rectX = rectX + 5;
+        }
+    </script>
+</body>
+</html>
